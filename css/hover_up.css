@@ -1,0 +1,8 @@
+.hover-up {
+    transition: transform .2s linear, box-shadow .2s linear;
+}
+
+.hover-up:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 2px 20px #d9dbe6;
+}
