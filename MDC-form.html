@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+<script>
+
+  $('button:not(.navbar-toggle)').addClass('mdc-button--raised mdc-button');
+  var buttons = document.querySelectorAll(".mdc-button");
+  buttons.forEach(function(item){mdc.ripple.MDCRipple.attachTo(item)});
+
+  var MDCselect = $('<div/>').addClass('mdc-select');
+  $('select').addClass('mdc-select__native-control').wrap(MDCselect);
+  $('select + label').addClass('mdc-floating-label').after('<div class="mdc-line-ripple"></div>');
+  var selects = document.querySelectorAll(".mdc-select");
+  selects.forEach(function(item){mdc.select.MDCSelect.attachTo(item)});
+  
+  $('input[type=text]').addClass('mdc-text-field__input').wrap('<div class="mdc-text-field" style="width : 100%; max-height: -webkit-fill-available;min-height: 35px;">').after('<label class="mdc-floating-label"/><div class="mdc-line-ripple"></div>');
+  var textFieldElements = [].slice.call(document.querySelectorAll('.mdc-text-field'));
+  textFieldElements.forEach(function(item){mdc.textField.MDCTextField.attachTo(item)});
+</script>
